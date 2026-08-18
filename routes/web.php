@@ -38,5 +38,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
-
-require __DIR__.'/auth.php';
