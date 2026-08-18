@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
@@ -34,10 +35,9 @@ use Illuminate\Support\Carbon;
  *
  * @mixin \Eloquent
  */
+#[Fillable(['title', 'content', 'category_id', 'author_id', 'image'])]
 class Article extends Model
 {
-    protected $fillable = ['title', 'content', 'category_id', 'author_id', 'image'];
-
     public function category()
     {
         return $this->belongsTo(Category::class);

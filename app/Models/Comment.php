@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -27,10 +28,9 @@ use Illuminate\Support\Carbon;
  *
  * @mixin \Eloquent
  */
+#[Fillable(['content', 'article_id', 'user_id'])]
 class Comment extends Model
 {
-    protected $fillable = ['content', 'article_id', 'user_id'];
-
     public function article()
     {
         return $this->belongsTo(Article::class);
