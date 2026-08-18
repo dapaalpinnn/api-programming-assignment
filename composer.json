@@ -11,10 +11,11 @@
     "require": {
         "php": "^8.5",
         "laravel/framework": "^13.8",
-        "laravel/tinker": "^3.0",
+        "laravel/tinkerc": "^3.0",
         "tymon/jwt-auth": "^2.2"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.7",
         "fakerphp/faker": "^1.23",
         "laravel/breeze": "^2.3",
         "laravel/pail": "^1.2.5",
@@ -58,6 +59,11 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
+        ],
+        "ide-helper": [
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:models -RW",
+            "./vendor/bin/pint app/Models"
         ]
     },
     "extra": {
